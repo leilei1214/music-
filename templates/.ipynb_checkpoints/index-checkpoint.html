@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>呼叫車系統</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">    
+    <link rel="stylesheet" href="./css/title/header.css">
+</head>
+<body>
+    <header>
+            <div class="col-R">
+                    <div class="R-margin">
+                        <div class="content">
+                            <ul>
+                                <li> 
+                                     <!-- <a href="#">2507實驗室地圖</a> -->
+                                    <a href="./car.html"><div>室內貨物</div><div>區域圖</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car2.html">編輯</a>
+                                </li>
+                                <li>
+                                    <a href="./login.html">登入</a>
+                                </li>
+                                <li>
+                                    <a href="./login.html" onclick="logout()">登出</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    </header> 
+</body>
+<script>
+    function logout(){
+        window.location.href="./login.html";
+        localStorage.clear();
+    } 
+        
+</script>

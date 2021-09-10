@@ -1,0 +1,41 @@
+import json 
+from flask import Flask,request,render_template
+
+app = Flask(__name__)
+app.config['DEBUG'] = True
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
+
+# @app.route("/follow",methods=['GET','POST'])
+# def show():
+#     if request.method == "POST":
+#         pass
+#     return render_template("follow.html")
+
+# @app.route("/index/location",methods=['GET','POST'])
+# def location():
+#     if request.method == "POST":
+#         db = pymysql.connect("127.0.0.1","root","user","test1")
+#         rssi = {
+#             "rssi1" : "",
+#             "rssi2" : "",
+#             "rssi3" : ""
+#         }
+#         cursor = db.cursor()
+#         cursor.execute("select * from rssi")
+#         data = cursor.fetchone()
+#         rssi["rssi1"] = data[1]
+#         rssi["rssi2"] = data[2]
+#         rssi["rssi3"] = data[3]
+#         print(rssi)
+#         return json.dumps(rssi)
+
+@app.route("/login",methods=['GET','POST'])
+def index():
+    return render_template("index.html")
+# @app.route("/sick",methods=['GET','POST'])
+# def sick():
+#     return render_template("sick.html")
+
+if __name__ == "__main__":
+    # app.run()
+    app.run(host='0.0.0.0',port=5000,debug=True)
