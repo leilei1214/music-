@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/title/header.css">
+    <link rel="stylesheet" href="../static/css/love/love.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
+    <title>音樂歌詞網</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+    {% extends "header.html" %}
+    {% block content %}
+<main>
+    <div id="list">
+            <!-- <a href="#" onclick="list()">1111 </a>
+            <a href="#" onclick="list()">1111 </a>
+            
+            <a href="#" onclick="list()">1111 </a>
+            
+            <a href="#" onclick="list()">1111 </a> -->
+    </div>
+    <div id = content>
+        <!-- <button onclick="result()">111</button> -->
+    </div>
+
+</main>
+ 
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script>
+$.getJSON('./file',(file) => {
+    let content = " "
+    jsonArray = file
+    if(JSON.stringify(jsonArray)=="{}"){
+        var jsonArray = file
+
+    }else{
+        var jsonArray = JSON.parse(jsonArray)
+
+
+    }
+    window.localStorage.setItem('jsonArray',JSON.stringify(jsonArray));
+
+    for (const entry of Object.keys(jsonArray)){
+        content+=(`<button value=${entry} onclick="list(this)">${entry} </button>`)
+        console.log(entry);
+    }
+    document.getElementById("list").innerHTML = content;
+
+    // console.log(jsonArray)
+});
+function list(obj){
+    let content = " "
+    id = obj.value
+    window.localStorage.setItem('singer',id);
+
+    jsonArray =   window.localStorage.getItem('jsonArray');
+    var jsonArray = JSON.parse(jsonArray)
+    for(var i = 0;i<jsonArray[id].length;i++){
+        content+=(`<button onclick="result(this,${i})" value="${jsonArray[id][i][0]}" >${jsonArray[id][i][0]}</button>`)
+   
+    }
+    document.getElementById("content").innerHTML = content;
+
+
+}
+function result(song,i){
+    // var song = JSON.parse(song.value)
+    song = song.value
+    i = i
+    singer = window.localStorage.getItem('singer');
+    jsonArray =   window.localStorage.getItem('jsonArray');
+    var jsonArray = JSON.parse(jsonArray)
+
+
+    web = jsonArray[singer][i][1]
+    end2 = jsonArray[singer][i][2]
+    song_name = window.localStorage.setItem('song_name',song+" "+id);
+    web = window.localStorage.setItem('web',web);
+    end2 = window.localStorage.setItem('end2',end2);
+    window.location.assign("/listen");
+
+}
+</script>
+{% endblock %}
+</html>

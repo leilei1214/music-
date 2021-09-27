@@ -1,0 +1,54 @@
+
+#aside{
+    position:fixed; 
+    overflow-y: auto; 
+    top: 50px;
+    right: 0;
+    height: calc(100vh - 52px);
+    background:rgba(0,0,0,0.5);
+    border: 1px solid blue;
+    width:250px;
+    dd{
+        margin-inline-start:20px;
+        color: gainsboro;
+    }
+}
+#im{  
+    line-height: 50px;
+    position:fixed;
+    left:40%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    color:#fff;
+    border-radius:10px;
+    padding:15px;
+    // height:80%;
+    width:50%;
+}
+#message{
+    height: 100%;
+
+}
+@media screen and (max-width: 733px) {
+    // main {
+    //     height: calc(247vh - 50px) !important;
+    // }
+    #im {
+        height:auto;
+
+        position: absolute !important;
+        left: 50%;
+        top: 55%;
+        width: 90%;
+
+    }
+    #aside {
+        position: relative !important;
+        width: 99%;
+        margin: 72% auto;
+        margin-bottom: 0;
+
+    }
+}

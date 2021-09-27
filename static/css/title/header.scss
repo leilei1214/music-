@@ -1,51 +1,121 @@
-body{
+main{
+
+    text-align:center;
+    height: calc(100vh - 50px) !important;
+    width:100%;
+    padding-top: 50px;
+}
+body {
+    background:url("./main.jpg");
+    background-size:cover;   
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
-ul li{
-    list-style: none;
-}
-a{
+a {
+    font-family: "微軟正黑體", sans-serif;
     text-decoration: none;
 }
-p{
-    margin:0;
+.container {
+    width: 90%;
+    margin: 0 auto;
 }
-header{
-    float: right;
-    height:100vh;
-    width:20%;
-    background-color:#6495ED;
-    .content {
-        background-color:#6495ED;
-        width:100%;
-        height:100vh;
-        ul{
-            font-size: 25px;;
-            text-align: center;
-            padding:0;
-            margin:0;
-            li {
-                border-bottom-style: solid;
-                border-bottom-color:#555;
-                a{
-                    display: inline-block;
-                    color:#000;
-                    // background: #000;
-                    line-height: 100px;
-                    height:100px;
-                    width:100%;
-                }
-                div{
-                    line-height: 2;
-                }
-            }
-        }
+header {
+    width: 100%;
+}
+.navbar {
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    background: #fff;
+}
+.navbar a {
+    float: left;
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navbar i {
+    cursor: pointer;
+    margin:0px 10px 0px 0px;
+    font-size: 25px;
+    float: left;
+    line-height: 50px;
+}
+.nav-menu {
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #555;
+    transition: left 2s;
+    z-index: 800;
+}
+.active {
+    left: 0;
+}
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    list-style: none;
+}
+.nav-menu a {
+    font-size: 2em;
+    line-height: 2em;
+    color: #fff;
+}
+.nav-menu i {
+    font-size: 2em !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.iframe-rwd {
+    position: relative;
+    padding-bottom: 65.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.iframe-rwd iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (min-width: 767px) {
+    .nav-menu {
+        width: 300px;
     }
-    .content a:hover,.active{
-        background: #eee;
-        color:#000;
+    button{
+        width:90% !important;
     }
 }
+
+.embed-container { 
+    position: relative;
+    padding-bottom: 65.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden; }
+.embed-container iframe, .embed-container object, .embed-container embed {
+     position: absolute;
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; }

@@ -1,0 +1,91 @@
+form{
+    line-height: 50px;
+    position: absolute;;
+    left:50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    // background:rgba(0,0,0,0.5);
+    text-align:center;
+    color:#fff;
+    border-radius:10px;
+    padding:15px;
+    height:50%;
+    width:50%;
+}
+input[type="text"],input[type="password"]{
+    font-size:16px;
+    font-family:"微軟正黑體",sans-serif;
+    /* margin: 0 auto; */
+    width: calc(100% - 32px);
+    border-radius: 4px;
+    
+} 
+
+label {
+    margin:3px 0px 10px 0px;
+    position: relative;
+    width: 100%;
+    
+}
+label > input {
+    width: 100% ;
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 25px;
+    border: 1px solid #000;
+}
+dd{
+    padding-top: 15px;
+    height: calc(100vh - 52px);
+    overflow-y: auto;
+}
+label>i {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 16px;
+}
+label input:focus {
+    border: 1px solid dodgerblue;
+}
+label input:focus + i{
+    color: dodgerblue;
+}
+#content{
+    position: absolute;
+    left: 50%;
+    top: 69%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+    // border-radius: 10px;
+    // padding: 15px;
+    // height: 50%;
+    width: 50%;
+}
+#content lable{
+    display: inline-block;
+    background: cornflowerblue;
+    margin: 25px;
+    padding: 8px;
+    color: cornsilk;
+    width: 16%;
+    cursor: pointer;
+}
+
+dd{
+    padding-top: 0px;
+}
+@media screen and (max-width: 767px) {
+    #content{
+        width: 80%;
+    }
+    #content lable{
+        margin: 2px;
+        width:90%;
+    }
+}

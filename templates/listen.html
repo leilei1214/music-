@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <link rel="stylesheet" href="../static/css/index/index.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/listen/listen.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,20 +16,19 @@
 <body>
     {% extends "header.html" %}
     {% block content %}
-<main  id="body">
-        <form id="search">
-            <label>
-                    <i class="fas fa-search"></i>
-                    <input id="search-input"  type="text" placeholder="搜尋music">
-            </label>
-        </form>
-        <div id="content">
+<main>
 
+        <div id="im">
+            <div id="message">
             </div>
-</main>
+        </div>
 
+        <div id="aside">
+          </div>
+
+    </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="../static/js/index.js"></script>
+<script src="../static/js/listen.js"></script>
 {% endblock %}
 </html>
