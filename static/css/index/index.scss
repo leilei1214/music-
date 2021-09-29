@@ -36,8 +36,8 @@ label > input {
     border: 1px solid #000;
 }
 dd{
-    padding-top: 15px;
-    height: calc(100vh - 52px);
+    padding-top: 0;
+    height: calc(100vh - 261px);
     overflow-y: auto;
 }
 label>i {
@@ -77,12 +77,11 @@ label input:focus + i{
     cursor: pointer;
 }
 
-dd{
-    padding-top: 0px;
-}
+
 @media screen and (max-width: 767px) {
     #content{
         width: 80%;
+        top:50%;
     }
     #content lable{
         margin: 2px;
