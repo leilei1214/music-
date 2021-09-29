@@ -81,7 +81,7 @@ $.getJSON('./file',(file) => {
 //next
 function next(){
 id = window.localStorage.getItem('id');
-id =parseInt(id)+1
+id +=1
 song = window.localStorage.getItem('song');
 singer = window.localStorage.getItem('singer');
 song_name = window.localStorage.getItem('song_name');
@@ -101,20 +101,10 @@ fetch("/song",{
 
 }).then((jsonData) => {
     let content="" 
-    if(jsonData.song == "無資料</br>"){
-        console.log("111")
-        content+= (`<div  id="content">${jsonData.song}
-        <lable onclick="sure1()">確認</lable>
-        <lable onclick="bef()">上一個</lable></div>
-        `)
-    }else{
-        content+= (`<div  id="content">${jsonData.song}
-        <lable onclick="sure1()">確認</lable>
-        <lable onclick="next()">下一個</lable>
-        <lable onclick="bef()">上一個</lable></div>
-        `)
-    }
-
+    content+= (`<div  id="content">${jsonData.song}
+    <lable onclick="sure1()">確認</lable>
+    <lable onclick="next()">下一個</lable></div>
+    `)
     console.log(jsonData)
     window.localStorage.setItem('id',id);
     window.localStorage.setItem('end2',jsonData["song"]);
@@ -126,73 +116,6 @@ fetch("/song",{
     console.error('Error:', error)
 })
 
-
-}
-function bef(){
-    var id = window.localStorage.getItem('id');
-    if(id==0){
-        id=0
-    }else{
-        id =parseInt(id)-1
-
-    }
-    song = window.localStorage.getItem('song');
-    singer = window.localStorage.getItem('singer');
-    song_name = window.localStorage.getItem('song_name');
-    web = window.localStorage.getItem('web');
-    var foemData = new FormData();
-    var search = singer+" "+song 
-    foemData.append("search",search)
-    foemData.append("count",id)
-
-    fetch("/song",{
-        method: 'post',
-        body: foemData
-
-    }).then(response => {
-        //ok 代表狀態碼在範圍 200-299             
-        return response.json(); 
-
-    }).then((jsonData) => {
-        let content="" 
-        console.log(jsonData.song)
-        if(id = -1){
-            content+= (`<div  id="content">${jsonData.song}
-            <lable onclick="sure1()">確認</lable>
-            <lable onclick="next()">下一個</lable>
-            `)
-        }
-        else{
-            content+= (`<div  id="content">${jsonData.song}
-            <lable onclick="sure1()">確認</lable>
-            <lable onclick="next()">下一個</lable>
-            <lable onclick="bef()">上一個</lable></div>
-            `)
-        }
-
-        console.log(jsonData)
-        window.localStorage.setItem('id',id);
-        window.localStorage.setItem('end2',jsonData["song"]);
-
-        document.getElementById("body").innerHTML = content;
-
-})
-.catch(function(err) {
-    console.error('Error:', error)
-})
-}
-//取消
-function del(){
-    console.log("111")
-    let content=""
-    content+=(`        <form id="search">
-    <label>
-            <i class="fas fa-search"></i>
-            <input id="search-input"  type="text" placeholder="搜尋music">
-    </label>
-</form>`)
-document.getElementById("body").innerHTML = content;
-window.localStorage.clear()
 
 }
 $("#search").submit(function(event) {
@@ -214,8 +137,8 @@ fetch("/search",{
                 <iframe  width="853" height="480"   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen  src="${jsonData.web}"></iframe>
             </div>
             <lable onclick="sure()">確認</lable>
-
-            <lable onclick="del()">取消</lable>
+            <lable onclick="next()">無法顯示</lable>
+            <lable onclick="clear()">取消</lable>
         </div></div>
         `
         )

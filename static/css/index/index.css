@@ -38,8 +38,8 @@ label > input {
 }
 
 dd {
-  padding-top: 0;
-  height: calc(100vh - 261px);
+  padding-top: 15px;
+  height: calc(100vh - 52px);
   overflow-y: auto;
 }
 
@@ -82,10 +82,13 @@ label input:focus + i {
   cursor: pointer;
 }
 
+dd {
+  padding-top: 0px;
+}
+
 @media screen and (max-width: 767px) {
   #content {
     width: 80%;
-    top: 50%;
   }
   #content lable {
     margin: 2px;
