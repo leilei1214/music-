@@ -199,6 +199,8 @@ $("#search").submit(function(event) {
 let content = "";
 var foemData = new FormData();
 var search = document.getElementById("search-input").value;
+console.log(search)
+
 foemData.append("search",search)
 fetch("/search",{
     method: 'post',

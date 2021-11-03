@@ -6,7 +6,7 @@
   margin: 25px;
   padding: 8px;
   color: cornsilk;
-  width: 16%;
+  width: 16% !important;
   cursor: pointer;
 }
 
@@ -19,7 +19,7 @@
   background: rgba(0, 0, 0, 0.5);
   border: 0;
   line-height: 30px;
-  width: calc(100%/6);
+  width: calc(100%/6) !important;
   float: left;
 }
 /*# sourceMappingURL=love.css.map */

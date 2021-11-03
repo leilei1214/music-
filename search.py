@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests,json 
 def search(search):
+    print(search)
     # search =request.form.get("search")
     ss = {}
     search = search.replace(" ","+")
