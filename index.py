@@ -44,6 +44,6 @@ def index():
 # def my_love():
 #     return render_template("my_love.html")
 
-if __name__ == "__main__":
-    # app.run()
-    app.run()
+# if __name__ == "__main__":
+#     # app.run()
+#     app.run()
